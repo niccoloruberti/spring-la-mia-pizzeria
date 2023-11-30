@@ -18,6 +18,7 @@ public class Pizza {
 	@Column(columnDefinition = "TEXT")
 	private String descrizione;
 	
+	@Column(columnDefinition = "TEXT")
 	private String foto;
 	
 	private Double prezzo;
