@@ -18,12 +18,14 @@
 			<!-- elenco pizze -->
 			<div class="col-4 my-2" th:each="pizza : ${pizzas}">
 				<div class="card h-100" style="width: 18rem;">
-				  <img th:src="${pizza.foto}" class="card-img-top h-50" alt="...">
-				  <div class="card-body">
-				    <h5 class="card-title" th:text="${pizza.nome}"></h5>
-				    <p class="card-text" th:text="${pizza.descrizione}"></p>
-				    <p>[[${pizza.prezzo}]]€</p>
-				  </div>
+					<a th:href="@{/pizzas/{id} (id=${pizza.id})}" class="text-decoration-none text-dark">
+				  		<img th:src="${pizza.foto}" class="card-img-top h-50" alt="...">
+						  <div class="card-body">
+						    <h5 class="card-title" th:text="${pizza.nome}"></h5>
+						    <p class="card-text" th:text="${pizza.descrizione}"></p>
+						    <p>[[${pizza.prezzo}]]€</p>
+						  </div>
+					</a>
 				</div>
 			</div>
 		</div>
