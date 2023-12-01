@@ -11,13 +11,21 @@
 
 	<div class="container mt-5">
 		<div class="row">
+			<!-- Ricerca -->
+			<form class="d-flex justify-content-center mb-5">
+				<input class="form-control w-25 me-2" id="search" type="text" name="ricercaStr" th:value="${ricercaStr}">
+				<input class="btn btn-outline-success" type="submit" value="Cerca" > 		
+			</form>			
+		</div>
+		<div class="row">
 			<!-- se non ci sono pizze -->
 			<div th:if="${pizzas.size() == 0}" class="col-4 my-2">
 				<p>Non ci sono pizze nell'elenco</p>
 			</div>
+
 			<!-- elenco pizze -->
-			<div class="col-4 my-2" th:each="pizza : ${pizzas}">
-				<div class="card h-100" style="width: 18rem;">
+			<div class="col-12 col-md-4 d-flex justify-content-center my-3" th:each="pizza : ${pizzas}">
+				<div class="card h-100 w-75">
 					<a th:href="@{/pizzas/{id} (id=${pizza.id})}" class="text-decoration-none text-dark">
 				  		<img th:src="${pizza.foto}" class="card-img-top h-50" alt="...">
 						  <div class="card-body">

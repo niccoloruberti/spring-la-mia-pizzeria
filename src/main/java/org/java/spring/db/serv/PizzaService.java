@@ -27,4 +27,9 @@ public class PizzaService {
 		
 		pizzaRepository.save(pizza);
 	}
+	
+	public List<Pizza> findByNome(String ricercaStr) {
+		
+		return pizzaRepository.findByNomeContaining(ricercaStr);
+	}
 }
