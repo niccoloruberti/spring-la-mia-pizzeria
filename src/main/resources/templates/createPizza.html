@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+	
+	<div class="container">
+		<div class="row d-flex justify-content-center mt-5">
+			<div class="col-8 mt-3">
+				<h2>
+					Aggiungi una nuova pizza
+				</h2>
+				<form th:object="${pizza}"
+						method="POST">
+						
+					<label for="nome" class="form-label">Nome</label>
+					<input class="form-control" type="text" id="nome" th:field="*{nome}">
+					<label for="descrizione" class="form-label">Descrizione</label>
+					<input class="form-control" type="text" id="descrizione" th:field="*{descrizione}">
+					<label for="foto" class="form-label">Foto</label>
+					<input class="form-control" type="text" id="foto" th:field="*{foto}">
+					<label for="prezzo" class="form-label">Prezzo</label>
+					<input class="form-control" type="number" id="prezzo" th:field="*{prezzo}">
+					
+					<button class="btn btn-success mt-3" type="submit">Aggiungi</button>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
