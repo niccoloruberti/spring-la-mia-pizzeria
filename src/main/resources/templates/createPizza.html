@@ -14,16 +14,24 @@
 					Aggiungi una nuova pizza
 				</h2>
 				<form th:object="${pizza}"
-						method="POST">
+						method="post"
+						th:action="@{/create}">
 						
 					<label for="nome" class="form-label">Nome</label>
 					<input class="form-control" type="text" id="nome" th:field="*{nome}">
+					<div th:replace="fragments :: errorDiv('nome')"></div>
+					
 					<label for="descrizione" class="form-label">Descrizione</label>
 					<input class="form-control" type="text" id="descrizione" th:field="*{descrizione}">
+					<div th:replace="fragments :: errorDiv('descrizione')"></div>
+					
 					<label for="foto" class="form-label">Foto</label>
 					<input class="form-control" type="text" id="foto" th:field="*{foto}">
+					<div th:replace="fragments :: errorDiv('foto')"></div>
+					
 					<label for="prezzo" class="form-label">Prezzo</label>
 					<input class="form-control" type="number" id="prezzo" th:field="*{prezzo}">
+					<div th:replace="fragments :: errorDiv('prezzo')"></div>
 					
 					<button class="btn btn-success mt-3" type="submit">Aggiungi</button>
 					
