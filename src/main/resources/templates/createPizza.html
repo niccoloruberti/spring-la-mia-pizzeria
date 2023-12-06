@@ -10,12 +10,9 @@
 	<div class="container">
 		<div class="row d-flex justify-content-center mt-5">
 			<div class="col-8 mt-3">
-				<h2>
-					Aggiungi una nuova pizza
-				</h2>
 				<form th:object="${pizza}"
 						method="post"
-						th:action="@{/create}">
+						>
 						
 					<label for="nome" class="form-label">Nome</label>
 					<input class="form-control" type="text" id="nome" th:field="*{nome}">
@@ -33,7 +30,7 @@
 					<input class="form-control" type="number" id="prezzo" th:field="*{prezzo}">
 					<div th:replace="fragments :: errorDiv('prezzo')"></div>
 					
-					<button class="btn btn-success mt-3" type="submit">Aggiungi</button>
+					<button class="btn btn-success mt-3" type="submit">Salva</button>
 					
 				</form>
 			</div>

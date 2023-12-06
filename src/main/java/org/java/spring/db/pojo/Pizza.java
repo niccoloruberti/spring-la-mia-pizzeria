@@ -76,5 +76,9 @@ public class Pizza {
 		this.prezzo = prezzo;
 	}
 	
-	
+	@Override
+	public String toString() {
+		
+		return getId() + getNome() + getDescrizione();
+	}
 }

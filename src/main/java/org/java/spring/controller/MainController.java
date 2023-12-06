@@ -55,7 +55,7 @@ public class MainController {
 		return "createPizza";
 	}
 	
-	@PostMapping("/create")
+	@PostMapping("/pizzas/create")
 	public String store(@Valid @ModelAttribute("pizza") Pizza formPizza,
 		BindingResult bindingResult,
 		Model model) {
@@ -68,6 +68,24 @@ public class MainController {
 		
 		return "redirect:/";
 		
+	}
+	
+	@GetMapping("/pizzas/edit/{id}")
+	public String editPizza(@PathVariable("id") Integer id, Model model) {
+		
+		Pizza pizza = pizzaService.findById(id);
+		
+		System.out.println(pizza);
+		
+		model.addAttribute("pizza", pizza);
+		
+		return "createPizza";
+	}
+	
+	@PostMapping("/pizzas/edit/{id}")
+	public String updatePizza(@Valid @ModelAttribute Pizza pizza, BindingResult bindingResult, Model model) {
+		
+		return store(pizza, bindingResult, model);
 	}
 	
 }
