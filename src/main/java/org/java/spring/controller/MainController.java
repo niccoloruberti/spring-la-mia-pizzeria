@@ -88,4 +88,14 @@ public class MainController {
 		return store(pizza, bindingResult, model);
 	}
 	
+	@PostMapping("/pizzas/delete/{id}")
+	public String deletePizza(@PathVariable int id) {
+		
+		Pizza pizza = pizzaService.findById(id);
+		
+		pizzaService.delete(pizza);
+		
+		return "redirect:/";
+	}
+	
 }
